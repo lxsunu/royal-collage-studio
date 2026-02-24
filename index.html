@@ -1,394 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Royal Collage Studio | Premium PSD Templates</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- CSS VARIABLES & RESET --- */
-        :root {
-            --primary-black: #111111;
-            --secondary-black: #1a1a1a;
-            --gold: #D4AF37;
-            --gold-light: #F3E5AB;
-            --white: #ffffff;
-            --gray: #f4f4f4;
-            --text-color: #333;
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Montserrat', sans-serif;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: var(--font-body);
-            background-color: var(--white);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-        img { max-width: 100%; display: block; }
-
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            text-align: center;
-            margin-bottom: 1rem;
-            color: var(--primary-black);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
-            margin-bottom: 3rem;
-            font-size: 1.1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--gold);
-            color: var(--primary-black);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border: 1px solid var(--gold);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--white);
-            border: 1px solid var(--white);
-        }
-        
-        .btn-outline:hover {
-            background: var(--white);
-            color: var(--primary-black);
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            background-color: var(--primary-black);
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #333;
-        }
-
-        .nav-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            color: var(--gold);
-            font-weight: 700;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: var(--white);
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: var(--gold);
-        }
-
-        .cart-icon {
-            color: var(--gold);
-            cursor: pointer;
-        }
-
-        /* --- PAGE SECTIONS --- */
-        .page-section {
-            display: none; /* Hidden by default, JS toggles this */
-            padding: 4rem 0;
-            min-height: 80vh;
-            animation: fadeIn 0.5s ease-in-out;
-        }
-
-        .page-section.active {
-            display: block;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* --- HOME / HERO --- */
-        #home {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: var(--white);
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-heading);
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: var(--gold);
-        }
-
-        .hero-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            letter-spacing: 1px;
-        }
-
-        /* --- SHOP GRID --- */
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .product-card {
-            background: var(--white);
-            border: 1px solid #eee;
-            transition: 0.3s;
-            overflow: hidden;
-        }
-
-        .product-card:hover {
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            transform: translateY(-5px);
-            border-color: var(--gold);
-        }
-
-        .product-image {
-            height: 250px;
-            width: 100%;
-            object-fit: cover;
-            background: #f9f9f9;
-        }
-
-        .product-info {
-            padding: 1.5rem;
-            text-align: center;
-        }
-
-        .product-title {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .product-price {
-            color: var(--gold);
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        /* --- PRODUCT DETAIL --- */
-        .product-detail-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .detail-image {
-            width: 100%;
-            height: auto;
-            border: 1px solid #eee;
-        }
-
-        .detail-content h2 {
-            font-family: var(--font-heading);
-            font-size: 2.5rem;
-            color: var(--primary-black);
-        }
-
-        .detail-price {
-            font-size: 1.5rem;
-            color: var(--gold);
-            margin: 1rem 0;
-            font-weight: 600;
-        }
-
-        .features-list {
-            margin: 2rem 0;
-        }
-
-        .features-list li {
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .features-list li::before {
-            content: "✓";
-            color: var(--gold);
-            margin-right: 10px;
-            font-weight: bold;
-        }
-
-        /* --- ABOUT --- */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text p { margin-bottom: 1rem; }
-        
-        .why-choose-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .why-item {
-            background: var(--gray);
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 3px solid var(--gold);
-        }
-
-        /* --- CONTACT --- */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-        }
-
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 15px;
-            margin-bottom: 1rem;
-            border: 1px solid #ddd;
-            background: #f9f9f9;
-        }
-
-        .contact-info h3 { margin-bottom: 1rem; color: var(--gold); }
-
-        /* --- FOOTER --- */
-        footer {
-            background: var(--primary-black);
-            color: #888;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: auto;
-            border-top: 1px solid #333;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
-            .product-detail-container, .about-content, .contact-wrapper { grid-template-columns: 1fr; }
-            .nav-links { display: none; } /* Simplified for demo */
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Royal Collage Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#0f0f0f;color:#fff;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{background:#000;padding:20px 10%;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0}
+header h1{color:#d4af37}
+nav a{margin-left:20px;color:#fff;font-weight:500}
+nav a:hover{color:#d4af37}
+section{padding:80px 10%}
+.hero{text-align:center}
+.hero h2{font-size:42px;color:#d4af37;margin-bottom:20px}
+.hero p{margin-bottom:30px;font-size:18px}
+.btn{background:#d4af37;color:#000;padding:12px 30px;border:none;border-radius:5px;font-weight:600;cursor:pointer;transition:.3s}
+.btn:hover{background:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.card{background:#1a1a1a;padding:20px;border-radius:10px;transition:.3s}
+.card:hover{transform:translateY(-5px)}
+.card img{width:100%;border-radius:10px;margin-bottom:15px}
+.price{color:#d4af37;font-weight:600;margin:10px 0}
+.features li{margin-bottom:8px}
+form input,form textarea{width:100%;padding:12px;margin-bottom:15px;border:none;border-radius:5px}
+footer{text-align:center;padding:20px;background:#000;margin-top:40px}
+@media(max-width:768px){
+.hero h2{font-size:28px}
+}
+</style>
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#" class="logo" onclick="navigate('home')">Royal Collage Studio</a>
-            <div class="nav-links">
-                <a href="#" onclick="navigate('home')">Home</a>
-                <a href="#" onclick="navigate('shop')">Shop</a>
-                <a href="#" onclick="navigate('about')">About</a>
-                <a href="#" onclick="navigate('contact')">Contact</a>
-            </div>
-            <div class="cart-icon" onclick="alert('Checkout feature would open here.')">
-                🛒 <span id="cart-count">0</span>
-            </div>
-        </div>
-    </nav>
+<header>
+<h1>Royal Collage Studio</h1>
+<nav>
+<a href="#home">Home</a>
+<a href="#shop">Shop</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
 
-    <!-- 1. HOME PAGE -->
-    <section id="home" class="page-section active">
-        <div class="hero-content container">
-            <h1>Premium Editable Photo Collage Templates</h1>
-            <p>Instant Download | Easy to Edit | High Quality PSD Files</p>
-            <a href="#" class="btn" onclick="navigate('shop')">Shop Now</a>
-        </div>
-    </section>
+<!-- HOME -->
+<section class="hero" id="home">
+<h2>Premium Editable Photo Collage Templates</h2>
+<p>Instant Download | Easy to Edit | High Quality PSD Files</p>
+<a href="#shop"><button class="btn">Shop Now</button></a>
+</section>
 
-    <!-- 2. SHOP PAGE -->
-    <section id="shop" class="page-section">
-        <div class="container">
-            <h2 class="section-title">Our Collection</h2>
-            <p class="section-subtitle">Perfect for weddings, birthdays, and social media.</p>
-            <div class="product-grid" id="shop-grid">
-                <!-- Products injected via JS -->
-            </div>
-        </div>
-    </section>
+<!-- SHOP -->
+<section id="shop">
+<h2 style="color:#d4af37;margin-bottom:40px;text-align:center;">Shop Templates</h2>
+<div class="grid">
 
-    <!-- 3. PRODUCT PAGE -->
-    <section id="product" class="page-section">
-        <div class="container product-detail-container">
-            <div class="detail-image-wrapper">
-                <img src="" alt="Product" id="detail-img" class="detail-image">
-            </div>
-            <div class="detail-content">
-                <h2 id="detail-title">Product Title</h2>
-                <div class="detail-price" id="detail-price">$0.00</div>
-                <p id="detail-desc">Description goes here.</p>
-                
-                <ul class="features-list">
-                    <li>Fully Editable PSD</li>
-                    <li>Smart Object Included</li>
-                    <li>High Resolution 300 DPI</li>
-                    <li>Instant Download</li>
-                </ul>
+<div class="card">
+<img src="https://via.placeholder.com/400x300" alt="">
+<h3>Wedding Collage Template</h3>
+<p class="price">$15</p>
+<button class="btn">Buy Now</button>
+</div>
 
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
-                <br><br>
-                <a href="#" onclick="navigate('shop')" style="color: #666; text-decoration: underline;">&larr; Back to Shop</a>
-            </div>
-        </div>
-    </section>
+<div class="card">
+<img src="https://via.placeholder.com/400x300" alt="">
+<h3>Birthday Collage Template</h3>
+<p class="price">$12</p>
+<button class="btn">Buy Now</button>
+</div>
 
-    <!-- 4. ABOUT PAGE -->
-    <section id="about" class="page-section">
+<div class="card">
+<img src="https://via.placeholder.com/400x300" alt="">
+<h3>Baby Album Template</h3>
+<p class="price">$18</p>
+<button class="btn">Buy Now</button>
+</div>
+
+</div>
+</section>
+
+<!-- PRODUCT PAGE SAMPLE -->
+<section>
+<h2 style="color:#d4af37;margin-bottom:30px;">Product Details</h2>
+<img src="https://via.placeholder.com/800x500" style="width:100%;border-radius:10px;margin-bottom:30px;">
+<h3>Features:</h3>
+<ul class="features">
+<li>✔ Fully Editable PSD</li>
+<li>✔ Smart Object Included</li>
+<li>✔ High Resolution 300 DPI</li>
+<li>✔ Instant Download</li>
+</ul>
+
+<h3 style="margin-top:40px;">Customer Reviews</h3>
+<p>⭐⭐⭐⭐⭐ "Amazing quality templates!"</p>
+<p>⭐⭐⭐⭐⭐ "Very easy to edit and professional design."</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+<h2 style="color:#d4af37;margin-bottom:20px;">About Royal Collage Studio</h2>
+<p>Royal Collage Studio provides premium editable PSD collage templates designed for wedding photographers, couples, birthday planners and social media creators.</p>
+
+<h3 style="margin-top:30px;color:#d4af37;">Why Choose Us?</h3>
+<ul>
+<li>✔ Premium Quality Designs</li>
+<li>✔ Instant Download Access</li>
+<li>✔ Easy Smart Object Editing</li>
+<li>✔ Modern & Elegant Layouts</li>
+</ul>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2 style="color:#d4af37;margin-bottom:20px;">Contact Us</h2>
+<form>
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea rows="5" placeholder="Your Message"></textarea>
+<button class="btn">Send Message</button>
+</form>
+<p style="margin-top:20px;">Email: support@royalcollagestudio.com</p>
+</section>
+
+<footer>
+<p>© 2026 Royal Collage Studio | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
