@@ -18,18 +18,10 @@ header {
     justify-content: space-between;
     padding: 20px 50px;
     background: black;
-    position: sticky;
-    top: 0;
 }
 
 header h2 {
     color: #d4af37;
-}
-
-nav a {
-    color: white;
-    margin-left: 20px;
-    text-decoration: none;
 }
 
 .hero {
@@ -39,23 +31,6 @@ nav a {
 
 .hero h1 {
     color: #d4af37;
-    font-size: 40px;
-}
-
-.hero p {
-    margin-top: 10px;
-    color: #ccc;
-}
-
-.btn {
-    background: #d4af37;
-    color: black;
-    padding: 10px 20px;
-    margin-top: 15px;
-    display: inline-block;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
 }
 
 .section {
@@ -75,29 +50,22 @@ nav a {
     width: 300px;
     border-radius: 15px;
     text-align: center;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 0 20px rgba(212,175,55,0.5);
 }
 
 .card img {
     width: 100%;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-.card h3 {
-    color: #d4af37;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: black;
-    margin-top: 50px;
+.btn {
+    background: #d4af37;
+    color: black;
+    padding: 10px 20px;
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
 }
 </style>
 </head>
@@ -106,59 +74,42 @@ footer {
 
 <header>
     <h2>Royal Collage Studio</h2>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#shop">Shop</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-    </nav>
 </header>
 
 <section class="hero">
     <h1>Premium Editable Photo Collage Templates</h1>
     <p>Instant Download | Easy to Edit | High Quality PSD Files</p>
-    <a href="#shop" class="btn">Shop Now</a>
 </section>
 
-<section class="section" id="shop">
-    <h2 style="color:#d4af37; text-align:center;">Shop Templates</h2>
+<section class="section">
     <div class="products">
-        
+
+        <!-- Wedding -->
         <div class="card">
-            <img src="dewdee.jpg" alt="Wedding Collage">
-            <h3>Wedding Collage Template</h3>
+            <h3>Wedding Collage</h3>
+            <img src="bgfb fg.png">
             <p>$15</p>
             <a href="#" class="btn">Buy Now</a>
         </div>
 
+        <!-- Birthday -->
         <div class="card">
-            <img src="frdfv.jpg" alt="Birthday Collage">
-            <h3>Birthday Collage Template</h3>
+            <h3>Birthday Collage</h3>
+            <img src="dewdee.jpg">
             <p>$12</p>
             <a href="#" class="btn">Buy Now</a>
         </div>
 
+        <!-- Baby -->
         <div class="card">
-            <img src="bgfb-fg.png" alt="Baby Collage">
-            <h3>Baby Album Template</h3>
+            <h3>Baby Collage</h3>
+            <img src="frdvfdv.jpg">
             <p>$18</p>
             <a href="#" class="btn">Buy Now</a>
         </div>
 
     </div>
 </section>
-
-<section class="section" style="text-align:center;">
-    <h2 style="color:#d4af37;">Why Choose Us?</h2>
-    <p>✔ Fully Editable PSD Files</p>
-    <p>✔ 300 DPI High Resolution</p>
-    <p>✔ Smart Object Ready</p>
-    <p>✔ Instant Download</p>
-</section>
-
-<footer>
-    © 2026 Royal Collage Studio | All Rights Reserved
-</footer>
 
 </body>
 </html>
