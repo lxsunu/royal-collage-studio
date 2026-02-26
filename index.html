@@ -4,147 +4,122 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Royal Collage Studio</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
 
-body{
-    background:#0d0d0d;
-    color:white;
-}
+body{background:#0f0f0f;color:white;}
 
 header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 60px;
-    background:black;
-    position:sticky;
-    top:0;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 60px;
+background:black;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .logo{
-    color:#d4af37;
-    font-size:24px;
-    font-weight:700;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-    font-size:14px;
-}
-
-nav a:hover{
-    color:#d4af37;
+color:#d4af37;
+font-size:24px;
+font-weight:700;
 }
 
 .hero{
-    text-align:center;
-    padding:120px 20px;
-    background:linear-gradient(to right,#000000,#1a1a1a);
+text-align:center;
+padding:120px 20px;
+background:linear-gradient(to right,#000000,#1c1c1c);
 }
 
 .hero h1{
-    font-size:42px;
-    color:#d4af37;
-    margin-bottom:20px;
+font-size:42px;
+color:#d4af37;
+margin-bottom:20px;
 }
 
 .hero p{
-    font-size:18px;
-    color:#ccc;
+color:#ccc;
+margin-bottom:30px;
 }
 
-.section{
-    padding:80px 60px;
+.hero a{
+background:#d4af37;
+color:black;
+padding:12px 30px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
 }
+
+.section{padding:80px 60px;}
 
 .section-title{
-    text-align:center;
-    font-size:32px;
-    color:#d4af37;
-    margin-bottom:50px;
+text-align:center;
+font-size:32px;
+color:#d4af37;
+margin-bottom:50px;
 }
 
 .products{
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:30px;
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:30px;
 }
 
 .card{
-    background:#1a1a1a;
-    width:300px;
-    padding:20px;
-    border-radius:20px;
-    transition:0.3s;
-    text-align:center;
+background:#1a1a1a;
+width:300px;
+padding:20px;
+border-radius:20px;
+text-align:center;
+transition:0.3s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
+transform:translateY(-10px);
+box-shadow:0 0 20px rgba(212,175,55,0.3);
 }
 
 .card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-    border-radius:15px;
-    margin-bottom:15px;
-}
-
-.card h3{
-    margin-bottom:10px;
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
 }
 
 .price{
-    color:#d4af37;
-    font-size:18px;
-    margin-bottom:15px;
+color:#d4af37;
+font-size:18px;
+margin:10px 0;
 }
 
 .btn{
-    display:inline-block;
-    padding:10px 25px;
-    background:#d4af37;
-    color:black;
-    text-decoration:none;
-    border-radius:8px;
-    font-weight:600;
-    transition:0.3s;
-}
-
-.btn:hover{
-    background:white;
-}
-
-.payment{
-    text-align:center;
-}
-
-.payment img{
-    width:200px;
-    margin-top:20px;
-    border-radius:15px;
+display:inline-block;
+padding:10px 25px;
+background:#d4af37;
+color:black;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
 }
 
 footer{
-    background:black;
-    text-align:center;
-    padding:20px;
-    margin-top:50px;
-    color:#888;
-    font-size:14px;
+background:black;
+text-align:center;
+padding:20px;
+margin-top:50px;
+color:#888;
+}
+
+@media(max-width:768px){
+header{padding:20px;}
+.section{padding:50px 20px;}
+.hero h1{font-size:28px;}
 }
 </style>
 </head>
@@ -152,57 +127,59 @@ footer{
 <body>
 
 <header>
-    <div class="logo">Royal Collage Studio</div>
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Templates</a>
-        <a href="#payment">Payment</a>
-    </nav>
+<div class="logo">Royal Collage Studio</div>
 </header>
 
 <section class="hero">
-    <h1>Premium Editable Photo Collage Templates</h1>
-    <p>Instant Download | Easy to Edit | High Quality PSD Files</p>
+<h1>Premium Editable Photo Collage Templates</h1>
+<p>Instant Download | Easy to Edit | High Quality PSD Files</p>
+<a href="#templates">Browse Templates</a>
 </section>
 
-<section class="section">
-    <h2 class="section-title">Our Templates</h2>
-
-    <div class="products">
-
-        <div class="card">
-            <img src="wedding.jpg" alt="wedding">
-            <h3>wedding Collage</h3>
-            <div class="price">₹300</div>
-            <a href="https://sununath.gumroad.com/l/makxzg" target="_blank" class="btn">Buy Now</a>
-        </div>
-
-        <div class="card">
-            <img src="birthday.jpg" alt="birthday">
-            <h3>birthday Collage</h3>
-            <div class="price">₹300</div>
-            <a href="https://sununath.gumroad.com/l/makxzg" target="_blank" class="btn">Buy Now</a>
-        </div>
-
-        <div class="card">
-            <img src="baby.jpg" alt="baby">
-            <h3>baby Collage</h3>
-            <div class="price">₹300</div>
-            <a href="https://sununath.gumroad.com/l/makxzg" target="_blank" class="btn">Buy Now</a>
-        </div>
-
-    </div>
-</section>
-
-<section class="section payment" id="payment">
-    <h2 class="section-title">Scan & Pay (UPI / GPay)</h2>
-    <p>Scan the QR and complete payment. After payment send screenshot on WhatsApp.</p>
-    <img src="gpayqr.png" alt="GPay QR">
+<section class="section" id="templates">
+<h2 class="section-title">Our Templates</h2>
+<div class="products" id="product-container"></div>
 </section>
 
 <footer>
-    © 2026 Royal Collage Studio | All Rights Reserved
+© 2026 Royal Collage Studio | All Rights Reserved
 </footer>
+
+<script>
+const products = [
+{
+title: "Wedding Collage",
+price: "₹300",
+image: "wedding.jpg",
+link: "https://sununath.gumroad.com/l/makxzg"
+},
+{
+title: "Birthday Collage",
+price: "₹300",
+image: "birthday.jpg",
+link: "https://sununath.gumroad.com/l/makxzg"
+},
+{
+title: "Baby Collage",
+price: "₹300",
+image: "baby.jpg",
+link: "https://sununath.gumroad.com/l/makxzg"
+}
+];
+
+const container = document.getElementById("product-container");
+
+products.forEach(product => {
+container.innerHTML += `
+<div class="card">
+<img src="${product.image}" alt="${product.title}">
+<h3>${product.title}</h3>
+<div class="price">${product.price}</div>
+<a href="${product.link}" target="_blank" class="btn">Buy Now</a>
+</div>
+`;
+});
+</script>
 
 </body>
 </html>
